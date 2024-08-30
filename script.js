@@ -24,11 +24,11 @@ function playRound(humanChoice, computerChoice) {
   computerChoice = computerChoice.toLowerCase()
 
   if((humanChoice == "rock" && computerChoice == "paper") || 
-    (humanhoice == "paper" && computerChoice == "scissors") || 
+    (humanChoice == "paper" && computerChoice == "scissors") || 
     (humanChoice == "scissors" && computerChoice == "rock")) {
       computerScore++
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`)
-  }else if((computerChoice == "rock" && humanChooice == "paper") || 
+  }else if((computerChoice == "rock" && humanChoice == "paper") || 
   (computerChoice == "paper" && humanChoice == "scissors") || 
   (computerChoice == "scissors" && humanChoice == "rock")) {
     humanScore++
@@ -38,7 +38,21 @@ function playRound(humanChoice, computerChoice) {
     console.log("Tie!")
 }
 
-let humanChoice = getHumanChoice()
-let computerChoice = getComputerChoice()
+function playGame() {
+  for(let i = 0; i < 5; i++) {
+    let humanChoice = getHumanChoice()
+    let computerChoice = getComputerChoice()
 
-playRound(humanChoice, computerChoice)
+    playRound(humanChoice, computerChoice)
+  }
+
+  if(humanScore > computerScore) {
+    console.log("Human wins!")
+  }else if(humanScore < computerScore) {
+    console.log("Computer wins!")
+  }else {
+    console.log("Tie!")
+  }
+}
+
+playGame()
