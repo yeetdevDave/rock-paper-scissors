@@ -58,23 +58,6 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  for(let i = 0; i < 5; i++) {
-    let humanChoice = getHumanChoice()
-    let computerChoice = getComputerChoice()
-
-    playRound(humanChoice, computerChoice)
-  }
-
-  if(humanScore > computerScore) {
-    console.log("Human wins!")
-  }else if(humanScore < computerScore) {
-    console.log("Computer wins!")
-  }else {
-    console.log("Tie!")
-  }
-}
-
 let buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
